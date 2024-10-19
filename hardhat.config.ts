@@ -67,8 +67,8 @@ const config: HardhatUserConfig = {
       gasMultiplier: 1.2,
       timeout: 60000,
     },
-    mumbai: {
-      url: `https://polygon-mumbai.blockpi.network/v1/rpc/public`,
+    amoy: {
+      url: `https://rpc-amoy.polygon.technology`,
       accounts: privateKey(),
       gasMultiplier: 1.1,
     },
