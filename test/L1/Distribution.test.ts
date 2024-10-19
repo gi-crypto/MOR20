@@ -412,7 +412,7 @@ describe('Distribution', () => {
       expect(userData.pendingRewards).to.eq(0);
     });
     it('should correctly calculate and withdraw rewards', async () => {
-      let userData;
+      let userData = null;
 
       await setNextTime(oneHour * 2);
       await distribution.manageUsersInPrivatePool(poolId, [SECOND.address, OWNER.address], [wei(1), wei(4)]);
@@ -453,7 +453,7 @@ describe('Distribution', () => {
       await distribution.connect(SECOND).claim(poolId, SECOND, { value: wei(0.5) });
     });
     it('should correctly calculate rewards after partial stake', async () => {
-      let userData;
+      let userData = null;
 
       await setNextTime(oneHour * 2);
       await distribution.manageUsersInPrivatePool(poolId, [SECOND.address, OWNER.address], [wei(1), wei(4)]);
@@ -492,7 +492,7 @@ describe('Distribution', () => {
       expect(userData.pendingRewards).to.eq(wei(0));
     });
     it('should correctly calculate rewards if change before distribution start and claim after', async () => {
-      let userData;
+      let userData = null;
 
       await distribution.manageUsersInPrivatePool(poolId, [SECOND.address, OWNER.address], [wei(1), wei(4)]);
 
@@ -513,7 +513,7 @@ describe('Distribution', () => {
       expect(userData.pendingRewards).to.eq(wei(0));
     });
     it('should correctly calculate rewards if change before distribution end and claim after', async () => {
-      let userData;
+      let userData = null;
 
       await setNextTime(oneDay + oneDay * 25);
       await distribution.manageUsersInPrivatePool(poolId, [SECOND.address, OWNER.address], [wei(1), wei(4)]);
@@ -535,7 +535,7 @@ describe('Distribution', () => {
       expect(userData.pendingRewards).to.eq(wei(0));
     });
     it('should correctly calculate rewards if change after distribution end', async () => {
-      let userData;
+      let userData = null;
       await setNextTime(oneDay * 20000);
       await distribution.manageUsersInPrivatePool(poolId, [SECOND.address, OWNER.address], [wei(2), wei(5)]);
 
@@ -552,7 +552,7 @@ describe('Distribution', () => {
       expect(userData.pendingRewards).to.eq(wei(0));
     });
     it('should correctly calculate rewards if change both at and distribution end', async () => {
-      let userData;
+      let userData = null;
 
       await setNextTime(oneDay + oneDay * 25);
       await distribution.manageUsersInPrivatePool(poolId, [SECOND.address, OWNER.address], [wei(1), wei(4)]);
@@ -573,7 +573,7 @@ describe('Distribution', () => {
       expect(userData.pendingRewards).to.eq(wei(520));
     });
     it('should correctly work if multiple changes in one block', async () => {
-      let userData;
+      let userData = null;
 
       await setNextTime(oneHour * 2);
 
@@ -628,7 +628,7 @@ describe('Distribution', () => {
       expect(userData.pendingRewards).to.eq(0);
     });
     it('should do nothing id deposited amount is the same', async () => {
-      let userData;
+      let userData = null;
 
       await setNextTime(oneHour * 2);
       await distribution.manageUsersInPrivatePool(poolId, [SECOND.address, OWNER.address], [wei(1), wei(4)]);
