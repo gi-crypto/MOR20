@@ -1,8 +1,6 @@
 # MOR20 Fair Launch Standard
 MOR20 is the generalized version of the Morpheus Capital Smart Contracts available for community use.
 
-![MOR20Proven](https://github.com/MorpheusAIs/MOR20/assets/1563345/af6e09d7-b03b-491b-8b08-72b8d380eac2)
-
 ## MOR20 Basics
 - Any project inside or even outside the context of Web3 & AI, can use MOR20 to bootstrap their project with the click of a button.
   
@@ -38,7 +36,6 @@ A MOR20 deployment consists of the following contracts:
 * `L2MessageReceiver` – receives and processes MOR minting requests on Arbitrum
 * `L2TokenReceiverV2` – receives wstETH and manages Protocol-Owned Liquidity on Arbitrum
 
-These contracts are functionally equivalent to those used by the Morpheus token itself. For more information, see the [Morpheus smart contract docs](https://github.com/MorpheusAIs/Docs/tree/main/Smart%20Contracts#overview).
 
 ### Contracts Deployment
 MOR20 contracts are deployed using the `Mor20FactoryL1` and `Mor20FactoryL2` factory contracts:
@@ -47,16 +44,3 @@ MOR20 contracts are deployed using the `Mor20FactoryL1` and `Mor20FactoryL2` fac
 * `deployMor20OnL2` on `Mor20FactoryL2` deploys the `ERC20MOR` (the project's reward token), `L2MessageReceiver`, and `L2TokenReceiver` contracts.
 
 These methods can be called in any order; however, before calling either method, the deployer should know the counterfactual deployment addresses of the second method, which can be calculated using `predictMor20Address`.
-
-
-## Links
-- [MOR20 website](https://mor.org/MOR20)
-- [MOR20 Discord channel](https://discord.com/channels/1151741790408429580/1228219372317966409)
-- [MOR20 Security Audit](https://github.com/user-attachments/files/15831583/MOR20-audit-final.pdf)
-- [Techno Capital Machince document](https://github.com/MorpheusAIs/Docs/blob/main/!KEYDOCS%20README%20FIRST!/Capital%20Providers%2C%20MOR20%2C%20TCM/Techno%20Capital%20Machine%20(TCM).md)
-- [AMM Liquidity Deployment and Fair Price Discovery](https://github.com/MorpheusAIs/Docs/blob/main/!KEYDOCS%20README%20FIRST!/Capital%20Providers%2C%20MOR20%2C%20TCM/Phased%20AMM%20Deployment%20and%20Fair%20Price%20Discovery.md) 
-- [MOR20 Token Launch Lessons and Tips](https://github.com/MorpheusAIs/Docs/blob/main/!KEYDOCS%20README%20FIRST!/Capital%20Providers%2C%20MOR20%2C%20TCM/MOR20%20Token%20Launch%20Guide%2C%20Lessons%20and%20Tips.md)
-- [Research paper: MOR20 A Standard for Recurring Protocol Payments and Payouts in Web3](https://github.com/MorpheusAIs/Docs/blob/main/!KEYDOCS%20README%20FIRST!/Capital%20Providers%2C%20MOR20%2C%20TCM/MOR20%20A%20Standard%20for%20Recurring%20Protocol%20Payments%20and%20Payouts%20in%20Web3.pdf)
-- [MOR20 Testnet Launch Guide](https://github.com/MorpheusAIs/Docs/blob/main/!KEYDOCS%20README%20FIRST!/FAQs%20%26%20Guides/Guides/MOR20%20Testnet%20Launch%20Guide.md)
-
-
